@@ -1,4 +1,4 @@
-package
+﻿package
 {
 	import flash.display.MovieClip;
 	import flash.events.Event;
@@ -6,6 +6,8 @@ package
 	import screens.GameScreen;
 	import screens.IntroScreen;
 	import sounds.SoundPlayer;
+	import screens.WinScreen;
+	
 	
 	/**
 	 * ...
@@ -17,6 +19,7 @@ package
 		private var introScreen:IntroScreen;
 		private var gameOverScreen:GameOverScreen;
 		private var soundPlayer:SoundPlayer;
+		private var gameWin:WinScreen;
 		
 		public function Main() 
 		{
@@ -42,6 +45,7 @@ package
 			gameScreen = new GameScreen();
 			addChild(gameScreen);
 			gameScreen.addEventListener(GameScreen.GAME_OVER, onGameOver);
+			gameScreen.addEventListener(GameScreen.GAME_WIN, onGameWin);
 			
 			
 			
@@ -67,6 +71,24 @@ package
 			buildIntroSreen();
 		}
 		
+		private function onGameWin(e:Event):void 
+		{
+			removeChild(gameScreen);
+			gameScreen.removeEventListener(GameScreen.GAME_WIN, onGameWin);
+      
+			gameWin = new WinScreen();
+			addChild(gameWin);
+			gameWin.addEventListener(WinScreen.RESET2, onResetWin);
+   
+		}
+		
+		private function onResetWin(e:Event):void
+		{
+			gameWin.removeEventListener(WinScreen.RESET2, onResetWin);
+			removeChild(gameWin);
+			buildIntroSreen();
+		}
+	
 	}
 	
 }

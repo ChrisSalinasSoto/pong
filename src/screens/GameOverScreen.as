@@ -1,4 +1,4 @@
-package screens 
+﻿package screens 
 {
 	import flash.events.Event;
 	import flash.text.TextFormat;

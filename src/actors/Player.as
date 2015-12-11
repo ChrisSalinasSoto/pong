@@ -1,4 +1,4 @@
-package actors 
+﻿package actors 
 {
 	import utils.Controller;	
 	import flash.events.Event;
@@ -10,9 +10,11 @@ package actors
 	{
 		private var controller:Controller;
 		private var speed:Number = 0;
+		private var _maxSpeed:Number = 10;
 		
 		public function Player() 
 		{
+			
 			this.addEventListener(Event.ADDED_TO_STAGE, init);		
 		}		
 		private function init(e:Event):void 
@@ -25,11 +27,11 @@ package actors
 		{
 			if (controller.up)
 			{
-				speed = -15;
+				speed = -maxSpeed;
 			}
 			else if(controller.down)
 			{
-				speed = 15;
+				speed = maxSpeed;
 			}else
 			{
 				if (speed > 0) speed--;
@@ -42,6 +44,22 @@ package actors
 				
 			}
 			this.y += speed;
+			
+		}
+		
+		public function set maxSpeed(s:Number):void
+		{
+			_maxSpeed = s;
+			if(_maxSpeed > 10)
+			{
+				_maxSpeed = 10;
+				trace("maxspeed cannot be more than 10!")
+			}
+		}
+		
+		public function get maxSpeed():Number
+		{
+			return _maxSpeed;
 		}
 		
 	}

@@ -1,4 +1,4 @@
-package screens 
+﻿package screens 
 {
 	import flash.display.MovieClip;
 	import flash.text.TextFormat;
@@ -8,7 +8,7 @@ package screens
 	 */
 	public class Screen extends MovieClip
 	{
-		[Embed(source = "../../lib/starjedi/Starjedi.ttf",
+		[Embed(source = "../../lib/zenzai_itacha/ZenzaiItachi.ttf",
 		fontName = "jedi", 
 		mimeType = "application/x-font", 
 		fontWeight="normal", 
@@ -16,7 +16,7 @@ package screens
 		advancedAntiAliasing="true", 
 		embedAsCFF = "false")]		
 		private var JediFont:Class;
-		
+		 
 		protected var textFormat:TextFormat;
 		protected var subFormat:TextFormat;
 		protected var scoreFormat:TextFormat;
@@ -27,7 +27,7 @@ package screens
 			textFormat = new TextFormat();
 			textFormat.font = "jedi";
 			textFormat.size = 60;
-			textFormat.color = 0xffffff;
+			textFormat.color = 0xff0000;
 			
 			
 			subFormat = new TextFormat();

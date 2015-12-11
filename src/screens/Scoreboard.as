@@ -1,4 +1,4 @@
-package screens 
+﻿package screens 
 {
 	import flash.display.MovieClip;
 	import flash.display.Shape;
