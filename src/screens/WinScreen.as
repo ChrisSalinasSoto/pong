@@ -29,7 +29,7 @@
 
    title = new TextField();
    title.embedFonts = true;
-   title.text = "You Won";
+   title.text = "You escape Voltorb";
    title.autoSize = TextFieldAutoSize.CENTER;   
    title.setTextFormat(textFormat);  
    
