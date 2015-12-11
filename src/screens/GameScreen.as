@@ -32,7 +32,7 @@
 		private function init(e:Event):void 
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
-				for (var i:int = 0; i < 3; i++) 
+				for (var i:int = 0; i < 2; i++) 
 			{
 				balls.push(new Ball());
 				addChild(balls[i]);
@@ -111,7 +111,7 @@
 				
 			}
 			
-			if (scoreboard.player1 >= 10)
+			if (scoreboard.player1 >= 2)
 			{
 				
 				destroy();
